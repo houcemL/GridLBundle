@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 gridL
 =======
 GridL
