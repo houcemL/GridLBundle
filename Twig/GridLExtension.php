@@ -21,7 +21,7 @@ class GridLExtension extends \Twig_Extension {
             "jqgridL" => new \Twig_Function_Method($this, "gridL", array('is_safe' => array('html')))
         );
     }
-    public function gridL(\L\GridLBundle\Model\jqGridConfig $gridConf) {
+    public function gridL(\Lamari\GridLBundle\Model\jqGridConfig $gridConf) {
         
         $response = $this->container->get("templating")->renderResponse("GridLBundle:gridjs:grid.js.twig",
                 array("grid" => $gridConf,
