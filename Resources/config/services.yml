@@ -1,0 +1,15 @@
+## YAML Template.
+---
+parameters:
+    grid.entity_wrapper.class: L\GridLbundle\Tools\GridEntity
+    grid.extension.class: L\GridLbundle\Twig\GridLExtension
+
+services:
+    grid.entity_wrapper:
+        class: L\GridLBundle\Tools\GridEntity
+        arguments: ["@service_container"]
+    grid.extension:
+        class: L\GridLBundle\Twig\GridLExtension
+        arguments: ["@service_container"]
+        tags: 
+            - { name: twig.extension }
