@@ -1,5 +1,5 @@
 {
-    "name": "Lamari/grid",
+    "name": "lamari/grid",
     "description": "Symfony2 wrapper for jqGrid plugin",
     "keywords": ["symfony2","jquery","jqGrid"],
     "homepage": "https://github.com/houcemL/GridLBundle",
