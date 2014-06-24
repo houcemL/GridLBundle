@@ -22,7 +22,7 @@
         "psr-0": {
             "Lamari\\GridLBundle": ""
         }
-    }
+    },
     "extra": {
         "branch-alias": {
             "master": "0.1-dev"
