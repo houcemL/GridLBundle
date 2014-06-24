@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-namespace L\GridLBundle\Model;
+namespace Lamari\GridLBundle\Model;
 
 /**
  * Description of jqGridConfig

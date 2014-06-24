@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-namespace L\GridLBundle\Tools;
+namespace Lamari\GridLBundle\Tools;
 
 /**
  * Description of GridLEntity

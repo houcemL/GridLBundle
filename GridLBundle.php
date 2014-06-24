@@ -15,7 +15,7 @@
  * extensibility.
  * @author Houcem Eddine
  */
-namespace L\GridLBundle;
+namespace Lamari\GridLBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 class GridLBundle extends Bundle {
