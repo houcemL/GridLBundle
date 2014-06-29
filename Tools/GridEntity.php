@@ -13,9 +13,7 @@ namespace Lamari\GridLBundle\Tools;
  * @author houceml
  */
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use L\GridLBundle\Model\jqCol;
-use L\GridLBundle\Model\jqNames;
-use L\GridLBundle\Model\jqGridConfig;
+use Lamari\GridLBundle\Model\jqGridConfig;
 
 class GridEntity {
 
