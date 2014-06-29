@@ -47,7 +47,7 @@ class GridEntity {
     /**
      * 
      * @param type $class
-     * @return \Sf\GridLBundle\Model\jqdata
+     * @return GridLBundle\Model\jqdata
      */
     public function EntitiesFetchData($class) {
         $data = new jqdata();
@@ -83,10 +83,10 @@ class GridEntity {
     /**
      * 
      * @param type $class : format of the class "NamebundleBundle:className"
-     * @param \Sf\GridLBundle\Model\jqGridConfig $grid
+     * @param GridLBundle\Model\jqGridConfig $grid
      * @param Boolean $load : if true it generate an absolute url to load data
      *  automatically
-     * @return \Sf\GridLBundle\Model\jqGridConfig
+     * @return GridLBundle\Model\jqGridConfig
      */
     public function gridByDoctrineEntity($class, jqGridConfig $grid, $load) {
         if ($load) {
