@@ -7,7 +7,7 @@
 namespace Lamari\GridLBundle\Twig;
 /**
  * Description of GridLTwigExtension
- * 
+ * This extension add new twig function to generate needed jquery script for the grid.
  * @author houceml
  */
 class GridLExtension extends \Twig_Extension {
