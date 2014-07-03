@@ -87,11 +87,13 @@ class GridEntity {
      *  automatically
      * @return GridLBundle\Model\jqGridConfig
      */
-    public function gridByDoctrineEntity($class, jqGridConfig $grid, $load) {
+    public function gridByDoctrineEntity($class, jqGridConfig $grid = null, $load) {
         if ($load) {
             $grid->url = $this->router->generate("gridL_load", array(), true);
         }
-        $grid = new jqGridConfig;
+        if (empty($grid)) {
+            $grid = new jqGridConfig;
+        }
         $meta = $this->EntityFields($class);
         $fields = $meta->fieldNames;
         $grid->setColNames($fields);
