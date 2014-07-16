@@ -1,0 +1,15 @@
+## YAML Template.
+---
+parameters:
+    grid.entity_wrapper.class: Lamari\GridLbundle\Tools\GridEntity
+    grid.extension.class: Lamari\GridLbundle\Twig\GridLExtension
+
+services:
+    grid.entity_wrapper:
+        class: Lamari\GridLBundle\Tools\GridEntity
+        arguments: ["@service_container"]
+    grid.extension:
+        class: Lamari\GridLBundle\Twig\GridLExtension
+        arguments: ["@service_container"]
+        tags: 
+            - { name: twig.extension }

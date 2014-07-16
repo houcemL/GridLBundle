@@ -1,0 +1,29 @@
+{#empty Twig template #}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#{{ id }} ").jqGrid({{ grid | json_encode() | raw }});
+        $("#gbox_{{ id }} ").before("<input type='button' id='{{ editId }}'><input type='button' id='{{ saveId }}'><input type='button' id='{{ restoreId }}'>")
+        jQuery("#{{ editId }} ").click(function() {
+            jQuery("#{{ id }} ").jqGrid("editRow", selected);
+            this.disabled = 'true';
+            jQuery("#sved1,#cned1").attr("disabled", false);
+        });
+        jQuery("#{{ saveId }} ").click(function() {
+            jQuery("#{{ id }} ").jqGrid("saveRow", selected, {"successfunc": function() {
+                    jQuery("#{{ id }} ").trigger("reloadGrid");
+                }});
+            jQuery("#{{ saveId }} ,  #{{ restoreId }} ").attr("disabled", true);
+            jQuery("#{{ editId }} ").attr("disabled", false);
+        });
+        jQuery("#{{ restoreId }} ").click(function() {
+            jQuery("#{{ id }} ").jqGrid("restoreRow", selected);
+            jQuery("#{{ saveId }} ,#{{ restoreId }} ").attr("disabled", true);
+            jQuery("#{{ editId }} ").attr("disabled", false);
+        });
+        jQuery("#{{ editId }} ").click(function() {
+            jQuery("#{{ id }} ").jqGrid("addRow", selected);
+            jQuery("#{{ editId }} ").attr("disabled", true);
+            jQuery("#{{ saveId }},#{{ restoreId }} ").attr("disabled", false);
+        });
+    })
+</script>
