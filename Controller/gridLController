@@ -1,0 +1,24 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+namespace Lamari\GridLBundle\Controller;
+
+/**
+ * Description of gridObjController
+ *
+ * @author houceml
+ */
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class gridLController extends Controller {
+    /**
+     * default load.
+     */
+    public function loadAction($class) {
+        return $this->get("grid.entity_wrapper")->_load($class);
+    }
+}
