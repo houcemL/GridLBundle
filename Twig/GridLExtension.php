@@ -21,15 +21,15 @@ class GridLExtension extends \Twig_Extension {
             "jqgridL" => new \Twig_Function_Method($this, "gridL", array('is_safe' => array('html')))
         );
     }
-    public function gridL(\Lamari\GridLBundle\Model\jqGridConfig $gridConf) {
-        
-        $response = $this->container->get("templating")->renderResponse("GridLBundle:gridjs:grid.js.twig",
-                array("grid" => $gridConf,
-                    "id" => "id",
-                "saveId" => "saveId",
-                "restoreId" => "restoreId",
-                "editId" => "editId"
-                    ));
+    public function gridL(\Lamari\GridLBundle\Model\jqGridConfig $gridConf, $pager = "pager", $events = null) {
+        $id = "gridL_" . md5(rand(1882, 1991));
+        $conf = array(
+            "grid" => $gridConf,
+            "id" => $id,
+            "events" => $events,
+            "paginator" => $pager,
+        );
+        $response = $this->container->get("templating")->renderResponse("GridLBundle:gridjs:grid.js.twig",$conf);
         return $response->getContent();
     }
     public function getName() {
