@@ -1,3 +1,3 @@
 gridL_load:
     pattern:  /lamari/load/{class}
-    defaults: { _controller: "GridLBundle:gridObj:load" }
+    defaults: { _controller: "GridLBundle:gridL:load" }
