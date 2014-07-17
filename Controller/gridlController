@@ -8,13 +8,13 @@
 namespace Lamari\GridLBundle\Controller;
 
 /**
- * Description of gridObjController
+ * Description of gridlController
  *
  * @author houceml
  */
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class gridLController extends Controller {
+class gridlController extends Controller {
     /**
      * default load.
      */
