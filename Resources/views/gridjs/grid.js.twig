@@ -1,8 +1,13 @@
 {#empty Twig template #}
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#{{ id }} ").jqGrid({{ grid | json_encode() | raw }});
-        $("#gbox_{{ id }} ").before("<input type='button' id='{{ editId }}'><input type='button' id='{{ saveId }}'><input type='button' id='{{ restoreId }}'>")
+    jQuery(document).ready(function() {
+        jQuery("#{{ id }} ").jqGrid({{ grid | json_encode() | raw }});
+        jQuery("#{{ id }}").jqGrid('filterToolbar',{});
+        {% if events is defined %}
+            {% for event in events %}
+                jQuery("#{{ id }} ").setGridParam({ {{ event.eventName}}:{{ event.eventHandler | raw }} });
+            {% endfor %}
+        {% endif %}
         jQuery("#{{ editId }} ").click(function() {
             jQuery("#{{ id }} ").jqGrid("editRow", selected);
             this.disabled = 'true';
@@ -27,3 +32,10 @@
         });
     })
 </script>
+<table id="{{ id }}"></table>
+{% if paginator is defined %}
+  <div id="{{ paginator | raw }}"></div>
+{% endif %}
+{% if editId is defined %}
+  <button id="{{ editId }}"></button>
+{% endif %}
