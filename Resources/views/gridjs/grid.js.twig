@@ -8,11 +8,14 @@
                 jQuery("#{{ id }} ").setGridParam({ {{ event.eventName}}:{{ event.eventHandler | raw }} });
             {% endfor %}
         {% endif %}
+        {% if editId is defined %}
         jQuery("#{{ editId }} ").click(function() {
             jQuery("#{{ id }} ").jqGrid("editRow", selected);
             this.disabled = 'true';
             jQuery("#sved1,#cned1").attr("disabled", false);
         });
+        {% endif %}
+        {% if saveId is defined %}
         jQuery("#{{ saveId }} ").click(function() {
             jQuery("#{{ id }} ").jqGrid("saveRow", selected, {"successfunc": function() {
                     jQuery("#{{ id }} ").trigger("reloadGrid");
@@ -20,16 +23,21 @@
             jQuery("#{{ saveId }} ,  #{{ restoreId }} ").attr("disabled", true);
             jQuery("#{{ editId }} ").attr("disabled", false);
         });
+        {% endif %}
+        {% if restoreId is defined %}
         jQuery("#{{ restoreId }} ").click(function() {
             jQuery("#{{ id }} ").jqGrid("restoreRow", selected);
             jQuery("#{{ saveId }} ,#{{ restoreId }} ").attr("disabled", true);
             jQuery("#{{ editId }} ").attr("disabled", false);
         });
-        jQuery("#{{ editId }} ").click(function() {
+        {% endif %}
+        {% if addId is defined %}
+        jQuery("#{{ addId }} ").click(function() {
             jQuery("#{{ id }} ").jqGrid("addRow", selected);
             jQuery("#{{ editId }} ").attr("disabled", true);
             jQuery("#{{ saveId }},#{{ restoreId }} ").attr("disabled", false);
         });
+        {% endif %}
     })
 </script>
 <table id="{{ id }}"></table>
