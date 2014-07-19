@@ -222,8 +222,8 @@ class GridEntity {
     /**
      * 
      */
-    public function _defaultGrid($class, $view) {
-        $grid = $this->gridByDoctrineEntity($class);
+    public function _defaultGrid($class, $view, $url = true) {
+        $grid = $this->gridByDoctrineEntity($class, null, $url);
         return $this->template->renderResponse($view, array("grid" => $grid));
     }
 
