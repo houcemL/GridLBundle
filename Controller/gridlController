@@ -12,13 +12,13 @@ namespace Lamari\GridLBundle\Controller;
  *
  * @author houceml
  */
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\ContainerAware;
 
-class gridlController extends Controller {
+class gridlController extends ContainerAware {
     /**
      * default load.
      */
     public function loadAction($class) {
-        return $this->get("grid.entity_wrapper")->_load($class);
+        return $this->container->get("grid.entity_wrapper")->_load($class);
     }
 }
