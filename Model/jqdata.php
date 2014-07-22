@@ -1,7 +1,6 @@
+<?php
 namespace Lamari\GridLBundle\Model;
 /**
- * Description of jqdata
- *
  * @author houceml
  */
 class jqdata {
