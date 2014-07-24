@@ -98,7 +98,7 @@ class GridEntity {
         $qb = $this->qb;
         $qb->add('select', 'obj')
                 ->add('from', $class . ' obj')
-                ->orderBy('obj.$sidx',$sord);
+                ->orderBy("obj.$sidx",$sord);
         if ($search === "true") {
             $afd = $this->getSearchedField($class);
             $field = $afd["field"];
