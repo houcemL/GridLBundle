@@ -43,7 +43,7 @@ class jqGridConfig {
         $this->method = empty($conf["method"]) ? "get" : $conf["method"];
         $this->url = empty($conf["url"]) ? "load" : $conf["url"];
         $this->datatype = empty($conf["datatype"]) ? "json" : $conf["datatype"];
-        $this->pager = empty($conf["pager"]) ? "pagerL" : $conf["pager"];
+        $this->pager = empty($conf["pager"]) ? "pager" : $conf["pager"];
         $this->sortorder = empty($conf["sortorder"]) ? "desc" : $conf["sortorder"];
         $this->sortname = empty($conf["sortname"]) ? "id" : $conf["sortname"];
         $this->rowNum = empty($conf["rowNum"]) ? "3" : $conf["rowNum"];
