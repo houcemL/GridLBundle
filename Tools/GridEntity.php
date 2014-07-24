@@ -27,6 +27,7 @@ class GridEntity {
     protected $router;
     protected $request;
     protected $qb;
+    protected $search;
 
     public function __construct(ContainerInterface $container) {
         $this->em = $container->get('doctrine.orm.entity_manager');
@@ -34,6 +35,7 @@ class GridEntity {
         $this->router = $container->get('router');
         $this->request = $container->get("request");
         $this->template = $container->get("templating");
+        $this->search = $this->request->get("_search");
     }
 
     public function setEntityClass($class) {
@@ -93,13 +95,12 @@ class GridEntity {
         $page = $this->request->get("page");
         $sidx = $this->request->get("sidx");
         $sord = $this->request->get("sord");
-        $search = $this->request->get("_search");
         $begin = $rows * ($page - 1);
         $qb = $this->qb;
         $qb->add('select', 'obj')
                 ->add('from', $class . ' obj')
                 ->orderBy("obj.$sidx",$sord);
-        if ($search === "true") {
+        if ($this->search === "true") {
             $afd = $this->getSearchedField($class);
             $field = $afd["field"];
             $value = $afd["val"];
@@ -136,7 +137,7 @@ class GridEntity {
         $page = $this->request->get("page");
         $id = $this->request->get("sidx");
         $data = new jqdata();
-        if (empty($entities)) {
+        if (empty($entities)&& ($this->search === 'false')) {
             $entities = $this->em->getRepository($class)->findAll();
         }
         $getId = $this->getter($id);
