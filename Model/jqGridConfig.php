@@ -46,7 +46,7 @@ class jqGridConfig {
         $this->pager = empty($conf["pager"]) ? "pager" : $conf["pager"];
         $this->sortorder = empty($conf["sortorder"]) ? "desc" : $conf["sortorder"];
         $this->sortname = empty($conf["sortname"]) ? "id" : $conf["sortname"];
-        $this->rowNum = empty($conf["rowNum"]) ? "3" : $conf["rowNum"];
+        $this->rowNum = empty($conf["rowNum"]) ? "5" : $conf["rowNum"];
         $this->rowList = empty($conf["rowList"]) ? array(5, 10, 15) : $conf["rowList"];
         $this->viewrecords = empty($conf["viewrecords"]) ? true : $conf["viewrecords"];
     }
