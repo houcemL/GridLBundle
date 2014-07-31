@@ -54,8 +54,8 @@ public function yourAction()
 ```
 ###### View :
 ```twig
-<link rel="stylesheet" type="text/css" media="screen" href="{{ asset ('jqgrid/css/jquery-ui-1.10.4.custom.min.css') }}" />
-<link rel="stylesheet" type="text/css" media="screen" href="{{ asset ('jqgrid/css/ui.jqgrid.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ asset ('bundles/gridl/css/jquery-ui-1.10.4.custom.min.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ asset ('bundles/gridl/css/ui.jqgrid.css') }}" />
 <script src="{{ asset ('bundles/gridl/js/jquery-1.11.0.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset ('bundles/gridl/js/i18n/grid.locale-en.js') }}" type="text/javascript"></script>
 <script src="{{ asset ('bundles/gridl/js/jquery.jqGrid.min.js') }}" type="text/javascript"></script>
