@@ -81,7 +81,7 @@ class GridEntity {
             $afd = $this->getSearchedField($class);
             $field = $afd["field"];
             $value = $afd["val"];
-            $qb->andWhere(" obj.$field like '%{$value}%' ");
+            $queryb->andWhere(" obj.$field like '%{$value}%' ");
         }
         $res = $queryb->getQuery()->getSingleScalarResult();
         return $res;
