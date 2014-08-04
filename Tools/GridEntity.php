@@ -77,6 +77,12 @@ class GridEntity {
                 ->add('from', $class . ' obj');
         $queryb->resetDQLPart("orderBy");
         $queryb->select(" count(obj.{$sidx}) ");
+        if ($this->search === "true") {
+            $afd = $this->getSearchedField($class);
+            $field = $afd["field"];
+            $value = $afd["val"];
+            $qb->andWhere(" obj.$field like '%{$value}%' ");
+        }
         $res = $queryb->getQuery()->getSingleScalarResult();
         return $res;
     }
