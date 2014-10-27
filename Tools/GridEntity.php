@@ -166,19 +166,18 @@ class GridEntity {
     
     /**
      * 
-     * @param type $class
      * @param type $entity
      * @param type $fieldsMap
      * @return type
      */
-    public function mappedToArray($class, $entity, $fieldsMap = array()) {
+    public function mappedToArray(array $entityInfo, $fieldsMap = array()) {
         if (empty($fieldsMap)) {
-            $fieldsMap = $this->entityFields($class);
+            $fieldsMap = $this->entityFields($$entityInfo['class']);
         }
         $cells = array();
         foreach ($fieldsMap as $key => $field) {
             $getter = $this->getter($key);
-            $keyvalue = $entity->$getter();
+            $keyvalue = $entityInfo['entity']->$getter();
             $cells[] = $keyvalue;
         }
         return $cells;
