@@ -12,9 +12,9 @@ namespace Lamari\GridLBundle\Twig;
  */
 class GridLExtension extends \Twig_Extension {
     const DEFAULT_TEMPLATE = 'GridLbundle::gridL.js.twig';
-    protected $container;
-    public function __construct($container) {
-        $this->container= $container;
+    protected $templating;
+    public function __construct($templating) {
+        $this->templating= $templating;
     }
     public function getFunctions() {
         return array(
@@ -29,7 +29,7 @@ class GridLExtension extends \Twig_Extension {
             "events" => $events,
             "paginator" => $pager,
         );
-        $response = $this->container->get("templating")->renderResponse("GridLBundle:gridjs:grid.js.twig",$conf);
+        $response = $this->templating->renderResponse("GridLBundle:gridjs:grid.js.twig",$conf);
         return $response->getContent();
     }
     public function getName() {
