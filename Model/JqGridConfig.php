@@ -8,11 +8,11 @@
 namespace Lamari\GridLBundle\Model;
 
 /**
- * Description of jqGridConfig
+ * Description of JqGridConfig
  *
  * @author houceml
  */
-class jqGridConfig {
+class JqGridConfig {
 
     public $pager;
     public $datatype;
