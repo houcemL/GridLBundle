@@ -29,12 +29,12 @@ class GridEntity {
     protected $qb;
     protected $search;
 
-    public function __construct(ContainerInterface $container) {
-        $this->em = $container->get('doctrine.orm.entity_manager');
+    public function __construct($em, $router, $request, $templating) {
+        $this->em = $em;
         $this->qb = $this->em->createQueryBuilder();
-        $this->router = $container->get('router');
-        $this->request = $container->get("request");
-        $this->template = $container->get("templating");
+        $this->router = $router);
+        $this->request = $request;
+        $this->template = $templating;
         $this->search = $this->request->get("_search");
     }
 
