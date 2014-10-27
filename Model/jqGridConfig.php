@@ -74,7 +74,7 @@ class jqGridConfig {
         if (is_array($models)) {
             foreach ($models as $model) {
                 if (!is_a($model, "jqCol")) {
-                    throw new Exception("jqGrid column model's not confiured !");
+                    throw new \Exception("jqGrid column model's not confiured !");
                 }
             }
             $this->colModel = $models;
