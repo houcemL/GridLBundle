@@ -3,7 +3,7 @@ namespace Lamari\GridLBundle\Model;
 /**
  * @author houceml
  */
-class jqdata {
+class Jqdata {
   public $page;
   public $total;
   public $records;
