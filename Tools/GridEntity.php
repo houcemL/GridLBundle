@@ -14,8 +14,8 @@ namespace Lamari\GridLBundle\Tools;
  */
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
-use Lamari\GridLBundle\Model\jqdata;
-use Lamari\GridLBundle\Model\jqGridConfig;
+use Lamari\GridLBundle\Model\Jqdata;
+use Lamari\GridLBundle\Model\JqGridConfig;
 
 class GridEntity {
 
@@ -141,7 +141,7 @@ class GridEntity {
         $maxrows = $this->request->get("rows");
         $page = $this->request->get("page");
         $id = $this->request->get("sidx");
-        $data = new jqdata();
+        $data = new Jqdata();
         if (empty($entities)&& ($this->search === 'false')) {
             $entities = $this->em->getRepository($class)->findAll();
         }
@@ -193,7 +193,7 @@ class GridEntity {
      */
     public function gridByDoctrineEntity($class, jqGridConfig $grid = null, $load = true) {
         if (empty($grid)) {
-            $grid = new jqGridConfig();
+            $grid = new JqGridConfig();
         }
         if ($load) {
             $grid->url = $this->router->generate("gridL_load", array("class" => $class), true);
@@ -218,7 +218,7 @@ class GridEntity {
     /**
      * 
      */
-    public function _load($class) {
+    public function load($class) {
         $entities = $this->getPage($class);
         $data = $this->fetchEntities($class, $entities);
         return $this->template->renderResponse("GridLBundle:gridjs:grid.json.twig", array("data" => $data));
@@ -227,7 +227,7 @@ class GridEntity {
     /**
      * 
      */
-    public function _defaultGrid($class, $view, $url = true) {
+    public function defaultGrid($class, $view, $url = true) {
         $grid = $this->gridByDoctrineEntity($class, null, $url);
         return $this->template->renderResponse($view, array("grid" => $grid));
     }
