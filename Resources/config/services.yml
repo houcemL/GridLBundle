@@ -10,6 +10,6 @@ services:
         arguments: ["@doctrine.orm.entity_manager","@router","@request","@templating"]
     grid.extension:
         class: Lamari\GridLBundle\Twig\GridLExtension
-        arguments: ["@service_container"]
+        arguments: ["@templating"]
         tags: 
             - { name: twig.extension }
