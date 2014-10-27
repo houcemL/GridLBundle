@@ -16,6 +16,7 @@ use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Lamari\GridLBundle\Model\Jqdata;
 use Lamari\GridLBundle\Model\JqGridConfig;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class GridEntity {
 
