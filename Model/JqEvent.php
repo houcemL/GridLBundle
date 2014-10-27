@@ -7,7 +7,7 @@
 
 namespace Lamari\GridLBundle\Model;
 
-class jqEvent {
+class JqEvent {
 
     //protected $onSelectRow = "function(){jQuery('#ed1').attr('disabled', false);selected = id;}";
     protected $handler;
