@@ -46,7 +46,7 @@ class GridEntity {
         $this->alias = $alias;
     }
 
-    public function Entityfields($class) {
+    public function entityfields($class) {
         $meta = $this->em->getClassMetadata($class);
         return $meta->fieldMappings;
     }
@@ -54,7 +54,7 @@ class GridEntity {
         $meta = $this->em->getClassMetadata($class);
         return $meta->fieldNames;
     }
-    public function EntitiesConf() {
+    public function entitiesConf() {
         return $this->em->getConfiguration();
     }
 
@@ -124,7 +124,7 @@ class GridEntity {
      * @return boolean
      */
     public function getSearchedField($class) {
-        $fields = $this->Entityfields($class);
+        $fields = $this->entityfields($class);
         foreach ($fields as $key => $field) {
             $keyf = $this->request->get($key);
             if(!empty($keyf)) {
@@ -166,7 +166,7 @@ class GridEntity {
     }
     
     /**
-     * Todo find out how to get just mapped properties.
+     * 
      * @param type $class
      * @param type $entity
      * @param type $fieldsMap
@@ -174,7 +174,7 @@ class GridEntity {
      */
     public function mappedToArray($class, $entity, $fieldsMap = array()) {
         if (empty($fieldsMap)) {
-            $fieldsMap = $this->EntityFields($class);
+            $fieldsMap = $this->entityFields($class);
         }
         $cells = array();
         foreach ($fieldsMap as $key => $field) {
@@ -200,7 +200,7 @@ class GridEntity {
         if ($load) {
             $grid->url = $this->router->generate("gridL_load", array("class" => $class), true);
         }
-        $fieldsMap = $this->EntityFields($class);
+        $fieldsMap = $this->entityFields($class);
         $fields = $this->getfieldNames($class);
         $grid->setColNames($fields);
         $i = 0;
