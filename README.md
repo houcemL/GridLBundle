@@ -1,7 +1,7 @@
 gridL
 =======
 Under  active development.
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/5b23deb6-2fee-487c-a049-7f7ab4e90fc9/big.png)](https://insight.sensiolabs.com/projects/5b23deb6-2fee-487c-a049-7f7ab4e90fc9)
+![alt tag](https://insight.sensiolabs.com/projects/5b23deb6-2fee-487c-a049-7f7ab4e90fc9/big.png)
 ##### Installation :
 ###### Composer (this is for Symfony > 2.0)
 
