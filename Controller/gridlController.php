@@ -19,6 +19,6 @@ class GridlController extends ContainerAware {
      * default load.
      */
     public function loadAction($class) {
-        return $this->container->get("grid.entity_wrapper")->_load($class);
+        return $this->container->get("grid.entity_wrapper")->load($class);
     }
 }
