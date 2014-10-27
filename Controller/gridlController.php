@@ -14,7 +14,7 @@ namespace Lamari\GridLBundle\Controller;
  */
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-class gridlController extends ContainerAware {
+class GridlController extends ContainerAware {
     /**
      * default load.
      */
