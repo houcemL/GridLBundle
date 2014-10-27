@@ -12,7 +12,6 @@ namespace Lamari\GridLBundle\Tools;
  *
  * @author houceml
  */
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Lamari\GridLBundle\Model\jqdata;
