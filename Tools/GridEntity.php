@@ -28,11 +28,11 @@ class GridEntity {
     protected $qb;
     protected $search;
 
-    public function __construct($em, $router, $request, $templating) {
+    public function __construct($em, $router, RequestStack $requestStack, $templating) {
         $this->em = $em;
         $this->qb = $this->em->createQueryBuilder();
         $this->router = $router;
-        $this->request = $request;
+        $this->request = $requestStack->getCurrentRequest();
         $this->template = $templating;
         $this->search = $this->request->get("_search");
     }
