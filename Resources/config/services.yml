@@ -7,7 +7,7 @@ parameters:
 services:
     grid.entity_wrapper:
         class: Lamari\GridLBundle\Tools\GridEntity
-        arguments: ["@doctrine.orm.entity_manager","@router","@request","@templating"]
+        arguments: ["@doctrine.orm.entity_manager","@router","@request_stack","@templating"]
     grid.extension:
         class: Lamari\GridLBundle\Twig\GridLExtension
         arguments: ["@templating"]
