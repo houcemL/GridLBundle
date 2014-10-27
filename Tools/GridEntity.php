@@ -32,7 +32,7 @@ class GridEntity {
     public function __construct($em, $router, $request, $templating) {
         $this->em = $em;
         $this->qb = $this->em->createQueryBuilder();
-        $this->router = $router);
+        $this->router = $router;
         $this->request = $request;
         $this->template = $templating;
         $this->search = $this->request->get("_search");
