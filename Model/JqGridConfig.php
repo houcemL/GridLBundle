@@ -30,6 +30,7 @@ class JqGridConfig {
     public $height;
 //    public $editurl;
     public $subGrid;
+    public $direction;
 
     // public $events;
     /**
@@ -49,6 +50,7 @@ class JqGridConfig {
         $this->rowNum = empty($conf["rowNum"]) ? "5" : $conf["rowNum"];
         $this->rowList = empty($conf["rowList"]) ? array(5, 10, 15) : $conf["rowList"];
         $this->viewrecords = empty($conf["viewrecords"]) ? true : $conf["viewrecords"];
+        $this->rowNum = empty($conf["direction"]) ? "ltr" : $conf["direction"];
     }
 
     /**
