@@ -18,6 +18,7 @@
 namespace Lamari\GridLBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-class GridLBundle extends Bundle {
+class GridLBundle extends Bundle 
+{
     //put your code here
 }
