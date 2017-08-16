@@ -12,7 +12,7 @@ namespace Lamari\GridLBundle\Controller;
  *
  * @author houceml
  */
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 class GridlController extends ContainerAware {
     /**
