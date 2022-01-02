@@ -1,7 +1,7 @@
 gridLBundle
 =======
 Under  active development.
-![alt tag](https://insight.symfony.com/projects/fe9fa2c2-6058-43a1-b00d-8e7d637f3933/mini.svg)
+![alt tag](https://insight.symfony.com/projects/cb2d8e5f-3496-46aa-ae72-7d5027e435b6/mini.svg)
 ##### Installation :
 ###### Composer (this is for Symfony > 2.3)
 
